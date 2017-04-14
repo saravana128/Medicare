@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MediCare</string>
+    <string name="not_a_member_sign_up">Not a Member? Sign-Up</string>
+    <string name="login">Login</string>
+    <string name="medicare">MediCare</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string-array name="gen">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+    <string-array name="special">
+        <item>Oncologist</item>
+        <item>Pediatrician</item>
+        <item>Internists</item>
+        <item>General Physician</item>
+        <item>Pediatrician</item>
+        <item>Infectious disease specialist</item>
+        <item>TB Specialist</item>
+        <item>Cardiologist</item>
+        <item>Endocrinologist</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+</resources>
