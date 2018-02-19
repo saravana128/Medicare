@@ -61,9 +61,7 @@ public class SignUpActivityDr extends AppCompatActivity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (sign.getText().length() == 0 || name.getText().length() == 0 || username.getText().length() == 0 || pswd.getText().length() == 0 || qual.getText().length() == 0 || certNum.getText().length() == 0 || hospName.getText().length() == 0) {
-                    Toast.makeText(getApplicationContext(), "Fill all the fields", Toast.LENGTH_SHORT).show();
-                } else {
+
                     dname = name.getText().toString();
                     duser = username.getText().toString();
                     dpswd = pswd.getText().toString();
@@ -76,7 +74,7 @@ public class SignUpActivityDr extends AppCompatActivity {
                     new Auth().execute();
 
 
-                }
+
 
 
             }
@@ -122,10 +120,10 @@ public class SignUpActivityDr extends AppCompatActivity {
                     cred.put("user_name", duser);
                     cred.put("password", dpswd);
                     cred.put("speciality_id", dspec);
-                    cred.put("gender", latlon);
-                    cred.put("qualification", latlon);
-                    cred.put("cert_id", latlon);
-                    cred.put("hospital_name", latlon);
+                    cred.put("gender", dgen);
+                    cred.put("qualification", dqual);
+                    cred.put("cert_id", dcertNum);
+                    cred.put("hospital_name", dhospName);
 
 
 
@@ -207,8 +205,6 @@ public class SignUpActivityDr extends AppCompatActivity {
                                 String token = j2.getString("token");
                                 JSONObject jk = j2.getJSONObject("user");
 
-                                String fname = jk.getString("user_fname");
-                                String lname=jk.getString("user_lname");
 
                                 String id = jk.getString("id");
                                 String role=jk.getString("role_id");

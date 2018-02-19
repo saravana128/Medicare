@@ -36,9 +36,6 @@ public class SignUpActivityPatient extends AppCompatActivity {
     Spinner gen2;
     Button sign;
     public String name23,pswd,age,uname,gen;
-    public String id,token;
-    public static String rend;
-    Base64 d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +47,6 @@ public class SignUpActivityPatient extends AppCompatActivity {
         user3=(EditText) findViewById(R.id.puser);
         gen2=(Spinner) findViewById(R.id.spinner);
         sign=(Button) findViewById(R.id.psign);
-        token = getIntent().getExtras().getString("token");
-        id = getIntent().getExtras().getString("id");
-        String ds = id + ":" + token;
-        final String ens = d.encodeToString(ds.getBytes(), Base64.NO_WRAP);
-        Log.i("encoded", ens);
-        rend = "Basic " + ens;
 
 
         sign.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +103,7 @@ public class SignUpActivityPatient extends AppCompatActivity {
                     cred.put("name", name23);
                     cred.put("user_name", uname);
                     cred.put("password", pswd);
-                    cred.put("gender", gen);
+                    cred.put("gender", "Male");
                     cred.put("age", age);
 
 
@@ -186,9 +177,6 @@ public class SignUpActivityPatient extends AppCompatActivity {
                     try {
                         Log.i("dds",mm);
 
-                        final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-                        if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 
 
                             try{
@@ -196,9 +184,6 @@ public class SignUpActivityPatient extends AppCompatActivity {
                                 JSONObject j2 = new JSONObject(mm);
                                 String token = j2.getString("token");
                                 JSONObject jk = j2.getJSONObject("user");
-
-                                String fname = jk.getString("user_fname");
-                                String lname=jk.getString("user_lname");
 
                                 String id = jk.getString("id");
                                 String role=jk.getString("role_id");
@@ -232,9 +217,6 @@ public class SignUpActivityPatient extends AppCompatActivity {
 
 
 
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Fill all the fields", Toast.LENGTH_SHORT).show();
-                        }
 
                     } catch (NullPointerException m) {
                         m.printStackTrace();

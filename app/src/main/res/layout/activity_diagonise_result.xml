@@ -49,7 +49,7 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/criclevel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -60,7 +60,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/sdoc"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

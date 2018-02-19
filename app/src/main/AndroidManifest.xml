@@ -22,13 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SignUpActivityOne"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignUpActivityDr"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SignUpActivityPatient" />
+        <activity android:name=".SignUpActivityPatient"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PatientRecord"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -37,6 +39,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DiagoniseResult"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Doctor"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -54,7 +59,8 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DoctorPatientList"></activity>
+        <activity android:name=".AppointmentActivity"
+            android:theme="@style/AppTheme.NoActionBar" ></activity>
     </application>
 
 </manifest>

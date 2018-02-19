@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText name2,pswd2;
     Button login,ntmem;
     String lname,lpswd;
-    public static String base="139.59.41.222/medicare/public";
+    public static String base="139.59.67.71/healthcare/public";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -191,17 +191,10 @@ public class LoginActivity extends AppCompatActivity {
                     String token = j2.getString("token");
                     JSONObject jk = j2.getJSONObject("user");
 
-                    String fname = jk.getString("user_fname");
-                    String lname=jk.getString("user_lname");
 
                     String id = jk.getString("id");
                     String role=jk.getString("role_id");
                     int result = Integer.parseInt(role);
-                    SharedPreferences.Editor editor = getSharedPreferences("hassan", MODE_PRIVATE).edit();
-                    editor.putString("id", id);
-                    editor.putString("token", token);
-                    editor.putString("fname", fname);
-                    editor.commit();
                     super.onPostExecute(mm);
                     switch(result) {
                         case 2:Intent ik = new Intent(LoginActivity.this, PatientRecord.class);
@@ -211,7 +204,6 @@ public class LoginActivity extends AppCompatActivity {
                             break;
                         case 1:Intent it = new Intent(LoginActivity.this, Doctor.class);
                             it.putExtra("token", token);
-                            it.putExtra("fname", fname+ " "+lname);
                             it.putExtra("id", id);
                             startActivity(it);
                             break;

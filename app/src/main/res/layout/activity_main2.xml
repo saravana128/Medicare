@@ -24,7 +24,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_above="@+id/button3"
+        android:layout_above="@+id/done31"
         android:layout_below="@+id/textView6">
 
         <ListView
@@ -37,7 +37,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/done31"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

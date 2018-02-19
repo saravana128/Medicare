@@ -1,9 +1,11 @@
 package saravana.com.medicare;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
  */
 
 public class UsersAdapter2 extends ArrayAdapter<User2> {
+    UsersAdapter2 adapter;
     public UsersAdapter2(Context context, ArrayList<User2> sub) {
         super(context, 0, sub);
     }
@@ -34,8 +37,19 @@ public class UsersAdapter2 extends ArrayAdapter<User2> {
         TextView event123= (TextView) convertView2.findViewById(R.id.symNamw);
         CheckBox l7=(CheckBox) convertView2.findViewById(R.id.checkBox);
         event123.setText(user.title);
-        ListView le=(ListView) convertView2.findViewById(R.id.tgh);
-
+        l7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(user.check)
+                {
+                    user.check=false;
+                }
+                else
+                {
+                    user.check=true;
+                }
+            }
+        });
 
 
 
@@ -50,4 +64,5 @@ public class UsersAdapter2 extends ArrayAdapter<User2> {
         // Return the completed view to render on screen
         return convertView2;
     }
+
 }
